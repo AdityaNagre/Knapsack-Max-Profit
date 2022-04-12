@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Knapsack Calculator</title>
+  
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="../DAA_PRJ/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../DAA_PRJ/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../DAA_PRJ/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+    <!-- Then include bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+</head>
+<body>
+  <div class="pimg1">
+    <div class="ptext">
+      <p class="border grad3"></p>
+      <p class="border grad">DAA</p>
+      <p class="border grad2">PROJECT</p>
+    </div>
+  </div>
+  <section class="section section-dark rad">
+      <div class="container" style="padding-left: 100px;padding-right: 100px">
+        <div class="row g-4">
+            <div class="card ">
+              <div class="card-body">
+                <h5 class="card-title grad5">KNAPSACK</h5>
+                <p class="card-text">
+                We are given a set of items, each with a weight and a profit, and the maximum capacity of our knapsack. We have to add those items in such a way that we get maximum profit.
+                </p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="pimg2">
+      <div class="ptext">
+        <span class="border trans black grad7">KNAPSACK PROBLEM</span>
+      </div>
+    </div>
+    <section class="section section-dark rad">
+      <div class="text-center page-header">
+        <h2 id="kcap" class="grad8">KNAPSACK MAX PROFIT CALCULATOR</h2>
+    </div>
+    <div class="container hide1 ">
+      <div class="row justify-content-md-center mrg1">
+        <div class="col-md-6">
+            <div class="input-group">
+                <div class="input-group-addon ">
+                    <span class="glyphicon glyphicon-shopping-cart "></span>
+                </div>
+                <input class="form-control" id="capacity" type="number" placeholder="Enter Knapsack Capacity">
+            </div>
+        </div>
+        <div class="col-md-6 center-block mrg2">
+            <div class="input-group">
+                <div class="input-group-addon" >
+                    <span class="glyphicon glyphicon-align-left " aria-hidden="true"></span>
+                </div>
+                <input class="form-control" id="rows" type="number" placeholder="Enter number of Items" />
+            </div>
+        </div>
+    </div>
+        <div class="text-center">
+            <button type="button" class="generateTable btn genr btn-success btn-grad" onclick="createTable();">Generate Table</button>
+        </div>
+        <div class="table" id="wrapper"></div>
+        <div class="text-center">
+            <button type="button" class="generateResult btn btn-primary btn-grad2 " id="butt" onclick="generateResult();">Calculate</button>
+        </div>
+    </div>
+    <hr>
+    <div class="container text-center ">
+        <div class="result ">
+            <div class="resultContainer" id="resultContainer1">
+                <h1 class="grad9">Knapsack Solution</h1>
+                <div class="resultContainer2">
+                  <h4>Profit</h4>
+                <h2 id="kpProfit" class="gradx"></h2>
+                <h4>Weight</h4>
+                <h2 id="kpWeight" class="gradx"></h2>
+                <h4>Profit / Weight</h4>
+                <h2 id="kpProfitWeight" class="gradx"></h2>
+                <h4>Resultant Solution</h4>
+                <h2 id="kpResultantSolution" class="gradx"></h2>
+                <h4>Max Profit</h4>
+                <h2 id="kpResultantProfit" class="gradx"></h2>
+              </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <div class="pimg1">
+      <div class="ptext">
+        <p class="border ">GROUP MEMBERS</p>
+      </div>
+    </div>
+
+    <script src="knp.js"></script>
+</body>
+</html>
+
+
+
