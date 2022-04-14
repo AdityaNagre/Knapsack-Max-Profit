@@ -9,7 +9,7 @@ body, html{
   color:#666;
 }
 
-.pimg1, .pimg2, .pimg3{
+.pimg1, .pimg2, .pimg3,.pimg4{
   position:relative;
   opacity:0.80;
   background-position:center;
@@ -19,18 +19,23 @@ body, html{
 }
 
 .pimg1{
-  background-image:url('../img/image6.jpg');
+  background-image:url('../img/image12.jpg');
   min-height:100vh;
 }
 
 .pimg2{
   background-image:url('../img/image5.jpg');
-  min-height:400px;
+  min-height:450px;
 }
 
 .pimg3{
-  background-image:url('../img/image4.jpg');
-  min-height:400px;
+  background-image:url('../img/image9.jpg');
+  min-height:450px;
+}
+
+.pimg4{
+  background-image:url('../img/image11.jpg');
+  min-height:100vh;
 }
 
 .section{
@@ -42,18 +47,19 @@ body, html{
   background-color:#ddd;
   color:#282e34;
   opacity: 0.90;
+  
 }
 
 .section-dark{
-  background-color:rgba(0, 0, 0, 0.906);
+  background-color:white;
   color:#ddd;
   opacity: 0.80;
-
+  padding: 60px;
 }
 
 .ptext{
+  top: 50%;
   position:absolute;
-  top:50%;
   width:100%;
   text-align:center;
   color:#000;
@@ -64,7 +70,7 @@ body, html{
 
 .ptext .border,.prob{
   background-color:#111;
-  color:#fff;
+  color: white;
   padding:20px;
 }
 
@@ -213,10 +219,10 @@ h2,#kcap{
   opacity: 1;
 }
 .grad{
-  left: 42.5%;
+  left: 41.93%;
   font-weight: 600;
   top: 2px;
-  font-size: 75px;
+  font-size: 85px;
   background: -webkit-linear-gradient(
     43deg,
     #4158d0 0%,
@@ -227,9 +233,27 @@ h2,#kcap{
   -webkit-text-fill-color: transparent;
   position: absolute;
 }
+.gradq,.gradqq{
+  left: 41.93%;
+  font-weight: 600;
+  font-size: 85px;
+  background: -webkit-linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 65%;
+}
+.gradqq{
+  top: 130%;
+}
 .grad4,.grad5,.grad6,
-.grad7,.grad8,.grad9,
-.grad10,.grad11,.gradx{
+.grad7,.grad8,
+.grad10,.grad11,.gradx,.grady, .gradz{
   background: -webkit-linear-gradient(
     43deg,
     #4158d0 0%,
@@ -241,6 +265,7 @@ h2,#kcap{
 }
 .grad2,.grad3{
   height: 65px;
+  background-color: black;
 }
 
 .black{
@@ -277,12 +302,48 @@ h2,#kcap{
 .grad4,.grad5,.grad6{
   font-size: 25px;
 }
+.grad5{
+  font-weight: 500;
+}
 
 .rad{
   border: 1rem solid black;
+  font-family:"Lato", sans-serif;
 }
 
- 
+.card2{
+  margin-top: 15px;
+}
+.grady{
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.gradz{
+  font-weight: 500;
+}
 
-
+.bgc{
+  background-color:#666;
+}
+.xxx{
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.white{
+  color: white;
+}
+.last{
+  height: 90px;
+}
+.grp{
+  bottom: 10px;
+}
+.flx{
+  display: flex;
+  justify-content: center;
+}
+.bgcb{
+  background-color:skyblue;
+}
 
