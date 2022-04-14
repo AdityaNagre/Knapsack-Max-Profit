@@ -4,7 +4,7 @@ let knapsackCapacity
 function createTable() {
     knapsackCapacity = document.getElementById('capacity').value;
     num_rows = document.getElementById('rows').value;
-    let theader = '<table class="table text-center" style="padding:5px; width:800px; margin-left:265px; border-radius:8px;margin-top:15px;box-shadow:15px 15px 5px black;border: none;" id="table" > <tr style="padding:20px;text-align:center;" style="color: black;" ><th scope="col" style="color: black;">Items</th> <th scope="col" style="color: black;">Profit</th> <th scope="col" style="color: black;">Weight</th></tr>';
+    let theader = '<table class="table text-center" style="padding:5px; width:800px; margin-left:265px; border-radius:8px;margin-top:15px;border: none;" id="table" > <tr style="padding:20px;text-align:center;" style="color: black;" ><th scope="col" style="color: black;">Items</th> <th scope="col" style="color: black;">Profit</th> <th scope="col" style="color: black;">Weight</th></tr>';
     let tbody = '';
 
     for (let i = 0; i < num_rows; i++) {
@@ -65,7 +65,7 @@ function generateResult() {
         weightValue = tableId.rows[i].cells[2].children[0].value;
         weight.push(weightValue)        
     }
-    // knapsack01Algorithm()
+
     sortLists()
 
     console.log("profit = " + profit);
@@ -78,17 +78,13 @@ function generateResult() {
 
 function sortLists() {
 
-    // to find profit/weight
     for (i = 0; i < num_rows; i++) {
         profit_weight[i] = (profit[i] / weight[i])
     }       
     console.log(tempList);
-
-    // to sort profit/weight in decreasing order along with profit and weight list
     let list = [];
     for (i = 0; i < num_rows; i++)
         list.push({ 'profit_weight': profit_weight[i], 'profit': profit[i], 'weight': weight[i] });
-
 
     list.sort(function (a, b) {
         return ((a.profit_weight > b.profit_weight) ? -1 : ((a.profit_weight == b.profit_weight) ? 0 : 1));
@@ -100,15 +96,6 @@ function sortLists() {
         weight[i] = list[i].weight;
     }
 }
-
-// 9    4   4   2.5     2.5     2   0.625       >profit/weight
-// 18   20  12  25      10      22  5           >profit
-// 2    5   3   10      4       11  8           >weight
-// 23
-
-// 20, 25, 10, 12, 5, 22, 1 
-
-// applying knapsack algorithm
 function knapsackAlgorithm() {
 
     for (i = 0; i < num_rows; i++) {
