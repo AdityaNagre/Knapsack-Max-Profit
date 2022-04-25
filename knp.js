@@ -29,14 +29,15 @@ let kpResultantProfitId = document.getElementById("kpResultantProfit")
 let kpProfitId = document.getElementById("kpProfit")
 let kpWeightId = document.getElementById("kpWeight")
 let kpProfitWeightId = document.getElementById("kpProfitWeight")
-let kpResultantSolutionId = document.getElementById("kpResultantSolution")
+
+var kp01ResultantProfitId = document.getElementById("kp01ResultantProfit")
+
 
 let weightValue, profitValue
 let profit = [];
 let weight = [];
 let profit_weight = []
 let tempList = []
-let resultantSolution = []
 let i, j, knapsackResultantProfit = 0;
 
 function generateResult() {
@@ -65,7 +66,7 @@ function generateResult() {
         weightValue = tableId.rows[i].cells[2].children[0].value;
         weight.push(weightValue)        
     }
-
+    knapsack01Algorithm()
     sortLists()
 
     console.log("profit = " + profit);
@@ -75,9 +76,7 @@ function generateResult() {
     console.log(knapsackResultantProfit);
 }
 
-
 function sortLists() {
-
     for (i = 0; i < num_rows; i++) {
         profit_weight[i] = (profit[i] / weight[i])
     }       
@@ -85,7 +84,6 @@ function sortLists() {
     let list = [];
     for (i = 0; i < num_rows; i++)
         list.push({ 'profit_weight': profit_weight[i], 'profit': profit[i], 'weight': weight[i] });
-
     list.sort(function (a, b) {
         return ((a.profit_weight > b.profit_weight) ? -1 : ((a.profit_weight == b.profit_weight) ? 0 : 1));
     });
@@ -118,6 +116,48 @@ function knapsackAlgorithm() {
     kpProfitId.innerHTML = profit
     kpWeightId.innerHTML = weight
     kpProfitWeightId.innerHTML = profit_weight
-    kpResultantSolutionId.innerHTML = tempList
+
+}
+
+function knapsack01Algorithm() {
+    var knapsackTable = new Array(num_rows)
+    for (i = 0; i <= num_rows; i++) {
+
+        knapsackTable[i] = Array(knapsackCapacity)
+        for (j = 0; j <= knapsackCapacity; j++) {
+            knapsackTable[i][j] = 0
+        }
+    }
+
+    var theader = '<table class="table table-bordered">';
+    var tbody = '';
+
+    for (i = 1; i <= num_rows; i++) {
+        for (j = 0; j <= knapsackCapacity; j++) {
+            if (weight[i - 1] <= j) {
+                knapsackTable[i][j] = (Math.max(knapsackTable[i - 1][j], +knapsackTable[i - 1][j - weight[i - 1]] + +profit[i - 1]));
+                tbody += '<td>';
+                tbody += knapsackTable[i][j];
+                tbody += '</td>'
+            }
+            else {
+                knapsackTable[i][j] = knapsackTable[i - 1][j]
+                tbody += '<td>';
+                tbody += knapsackTable[i][j];
+                tbody += '</td>'
+            }
+        }
+        tbody += '</tr></tbody>\n';
+    }
+
+    var tfooter = '</table>';
+    document.getElementById('knapsackTable').innerHTML = theader + tbody + tfooter;
+
+    console.log(knapsackTable);
+    console.log(knapsackTable[num_rows][knapsackCapacity]);
+
+
+    kp01ResultantProfitId.innerHTML = knapsackTable[num_rows][knapsackCapacity]
+
 }
 
